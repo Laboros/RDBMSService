@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class name="com.vodafone.rdbms.Employee"/>
+	<id name="eno" type="java.lang.Integer"/>
+	<column name="ENO" precision="s"/>
+	<generator class="assigned"/>
+	<property name="name" type="java.lang.String">
+	<column name="NAME"/>
+	</property>
+</hibernate-mapping>
