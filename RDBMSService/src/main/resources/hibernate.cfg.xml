@@ -28,7 +28,7 @@
 
 		<property name="hbm2ddl.auto">validate</property>
 
-		<mapping resource="com/vodafone/rdbms/pojo/Employee.hbm.xml" />
+		<mapping resource="com/vodafone/rdbms/pojo/project.hbm.xml" />
 
 
 	</session-factory>

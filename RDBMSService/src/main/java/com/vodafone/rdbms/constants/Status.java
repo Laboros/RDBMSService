@@ -2,17 +2,20 @@ package com.vodafone.rdbms.constants;
 
 public enum Status {
 	
-	CRON("CRON"),
-	OOZIE("OOZIE")
+	MOVED("MOVED"),
+	READY("READY"),
+	PROCESSED("PROCESSED"),
+	FAILED("FAILED"),
+	INPROGRESS("INPROGRESS")
 	;
 	
 	
-	private String processType;
-	private Status(String processType) {
-		this.processType=processType;
+	private String status;
+	private Status(String status) {
+		this.status=status;
 	}
 	public String getStringValue(){
-		return this.processType.toUpperCase();
+		return this.status.toUpperCase();
 	}
 
 }
