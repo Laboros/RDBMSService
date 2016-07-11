@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11 Jul, 2016 2:10:29 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.vodafone.rdbms.pojo.ControlProcess" table="CONTROLPROCESS">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="controlProcessId" type="java.lang.String">
+            <column name="CONTROL_PROCESS_ID" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="startTime" type="java.sql.Timestamp">
+            <column name="START_TIME" />
+        </property>
+        <property name="endTime" type="java.sql.Timestamp">
+            <column name="END_TIME" />
+        </property>
+        <property name="processType">
+            <column name="PROCESS_TYPE" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">com.vodafone.rdbms.constants.ProcessType</param>
+            </type>
+        </property>
+        <property name="status">
+            <column name="STATUS" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">com.vodafone.rdbms.constants.Status</param>
+            </type>
+        </property>
+        <set name="detail" table="CONTROL_PROCESS_DETAIL" inverse="false" lazy="true">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="com.vodafone.rdbms.pojo.ControlProcessDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

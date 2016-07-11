@@ -9,7 +9,7 @@ import com.vodafone.rdbms.constants.Status;
 public class ControlProcessDetail {
 	
 	private long controlProcessDetailId;//RDBMS generated id
-	private long controlProcessId;//Foreign key
+	private ControlProcess controlProcess;//Foreign key
 	
 	private String controlFileName; //Control File Name
 	private String datFileName;//Data file name
@@ -42,11 +42,12 @@ public class ControlProcessDetail {
 	public void setControlProcessDetailId(long controlProcessDetailId) {
 		this.controlProcessDetailId = controlProcessDetailId;
 	}
-	public long getControlProcessId() {
-		return controlProcessId;
+	
+	public ControlProcess getControlProcess() {
+		return controlProcess;
 	}
-	public void setControlProcessId(long controlProcessId) {
-		this.controlProcessId = controlProcessId;
+	public void setControlProcess(ControlProcess controlProcess) {
+		this.controlProcess = controlProcess;
 	}
 	public String getControlFileName() {
 		return controlFileName;
