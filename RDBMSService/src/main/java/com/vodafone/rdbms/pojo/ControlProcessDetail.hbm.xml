@@ -11,15 +11,25 @@
         <many-to-one name="controlProcess" class="com.vodafone.rdbms.pojo.ControlProcess" fetch="join">
             <column name="CONTROL_PROCESS_ID" />
         </many-to-one>
-        <property name="controlFileName" type="java.lang.String">
-            <column name="CONTROLFILENAME" />
+        <property name="baseControlFileNameWithLoc" type="java.lang.String">
+            <column name="BASECONTROLFILENAMEWITHLOC" />
         </property>
-        <property name="datFileName" type="java.lang.String">
-            <column name="DATFILENAME" />
+        <property name="baseDatFileNameWithLoc" type="java.lang.String">
+            <column name="BASEDATFILENAMEWITHLOC" />
         </property>
-        <property name="metaFileName" type="java.lang.String">
-            <column name="METAFILENAME" />
+        <property name="baseMetaFileNameWithLoc" type="java.lang.String">
+            <column name="BASEMETAFILENAMEWITHLOC" />
         </property>
+             <property name="destControlFileNameWithLoc" type="java.lang.String">
+            <column name="DESTCONTROLFILENAMEWITHLOC" />
+        </property>
+        <property name="destDatFileNameWithLoc" type="java.lang.String">
+            <column name="DESTDATFILENAMEWITHLOC" />
+        </property>
+        <property name="destMetaFileNameWithLoc" type="java.lang.String">
+            <column name="DESTMETAFILENAMEWITHLOC" />
+        </property>
+        
         <property name="hdfsCtlFileLoc" type="java.lang.String">
             <column name="HDFSCTLFILELOC" />
         </property>

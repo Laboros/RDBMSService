@@ -3,24 +3,21 @@ package com.vodafone.rdbms.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.vodafone.rdbms.pojo.Employee;
 import com.vodafone.rdbms.util.HibernateUtil;
 
-public class HibernateDAO {
+public class HibernateDAO<T> {
 	
-	public static Employee save(Employee employee) {
+	public static <T> T save(T entity) {
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		Session session = sf.openSession();
 		session.beginTransaction();
-
-		Long id = (Long) session.save(employee);
-		employee.setId(id);
+		session.save(entity);
 			
 		session.getTransaction().commit();
 			
 		session.close();
 
-		return employee;
+		return entity;
 	}
 	
 }
