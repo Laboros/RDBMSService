@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11 Jul, 2016 2:10:29 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.vodafone.rdbms.pojo.ControlProcessDetail" table="CONTROL_PROCESS_DETAIL">
+    <class name="com.controlprocess.pojo.ControlProcessDetail" table="CONTROL_PROCESS_DETAIL">
         <id name="controlProcessDetailId" type="long">
             <column name="CONTROL_PROCESS_DETAIL_ID" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
-        <many-to-one name="controlProcess" class="com.vodafone.rdbms.pojo.ControlProcess" fetch="join">
+        <many-to-one name="controlProcess" class="com.controlprocess.pojo.ControlProcess" fetch="join">
             <column name="CONTROL_PROCESS_ID" />
         </many-to-one>
         <property name="baseControlFileNameWithLoc" type="java.lang.String">
@@ -66,12 +66,8 @@
         <property name="updatedDate" type="java.sql.Timestamp">
             <column name="UPDATEDDATE" />
         </property>
-           <property name="status">
+           <property name="status" type="java.lang.String">
             <column name="STATUS" />
-            <type name="org.hibernate.type.EnumType">
-                <param name="type">12</param>
-                <param name="enumClass">com.vodafone.rdbms.constants.Status</param>
-            </type>
         </property>
     </class>
 </hibernate-mapping>

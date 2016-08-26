@@ -7,7 +7,7 @@
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/project</property>
+		<property name="connection.url">jdbc:mysql://192.168.1.9:3306/project</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">password</property>
 
@@ -30,7 +30,6 @@
 
 		<mapping resource="com/vodafone/rdbms/pojo/ControlProcess.hbm.xml" />
 		<mapping resource="com/vodafone/rdbms/pojo/ControlProcessDetail.hbm.xml" />
-
 
 	</session-factory>
 </hibernate-configuration>
